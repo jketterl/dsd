@@ -95,6 +95,7 @@ typedef struct
 #endif
   int audio_out_type; // 0 for device, 1 for file, 2 for portaudio
   int split;
+  int upsample; //!< Force audio output upsampling to 48kHz
   int playoffset;
   char mbe_out_dir[1024];
   char mbe_out_file[1024];

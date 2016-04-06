@@ -104,7 +104,7 @@ void processAudio(dsd_opts * opts, dsd_state * state)
 
     // copy audio data to output buffer and upsample if necessary
     state->audio_out_temp_buf_p = state->audio_out_temp_buf;
-    if (opts->split == 0)
+    if ((opts->split == 0) || (opts->upsample))
     {
         for (n = 0; n < 160; n++)
         {

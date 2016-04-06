@@ -104,6 +104,7 @@ void initOpts(dsd_opts * opts)
     opts->audio_out_pa_stream = NULL;
 #endif
     opts->split = 0;
+    opts->upsample = 0;
     opts->playoffset = 0;
     opts->mbe_out_dir[0] = 0;
     opts->mbe_out_file[0] = 0;
@@ -264,11 +265,12 @@ void usage()
     fprintf(stderr, "Input/Output options:\n");
     fprintf(stderr,
             "  -i <device>   Audio input device (default is /dev/audio, - for piped stdin)\n");
-    fprintf(stderr, "  -o <device>   Audio output device (default is /dev/audio)\n");
+    fprintf(stderr, "  -o <device>   Audio output device (default is /dev/audio, - for stdout)\n");
     fprintf(stderr, "  -d <dir>      Create mbe data files, use this directory\n");
     fprintf(stderr, "  -r <files>    Read/Play saved mbe data from file(s)\n");
     fprintf(stderr,
             "  -g <num>      Audio output gain (default = 0 = auto, disable = -1)\n");
+    fprintf(stderr, "  -U            Force upsampling to 48kHz on audio output\n");
     fprintf(stderr,
             "  -n            Do not send synthesized speech to audio output device\n");
     fprintf(stderr, "  -w <file>     Output synthesized speech to a .wav file\n");
@@ -476,7 +478,7 @@ int main(int argc, char **argv)
     signal(SIGINT, sigfun);
 
     while ((c = getopt(argc, argv,
-            "haep:qstv:z:i:o:d:g:nw:B:C:R:f:m:u:x:A:S:M:rl")) != -1)
+            "haep:qstv:z:i:o:d:g:nw:B:C:R:f:m:u:Ux:A:S:M:rl")) != -1)
     {
         opterr = 0;
         switch (c)
@@ -753,6 +755,9 @@ int main(int argc, char **argv)
             }
             fprintf(stderr, "Setting unvoice speech quality to %i waves per band.\n",
                     opts.uvquality);
+            break;
+        case 'U':
+            opts.upsample = 1;
             break;
         case 'x':
             if (optarg[0] == 'x')
