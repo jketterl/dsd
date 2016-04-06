@@ -16,6 +16,7 @@
  */
 
 #include "dsd.h"
+#include "dsd_cleanupexit.h"
 
 void
 playMbeFiles (dsd_opts * opts, dsd_state * state, int argc, char **argv)
