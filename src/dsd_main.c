@@ -15,8 +15,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-#define _MAIN
-
 #include "dsd.h"
 #include "dsd_cleanupexit.h"
 #include "p25p1_const.h"
