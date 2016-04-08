@@ -130,10 +130,6 @@ void printFrameInfo (dsd_opts * opts, dsd_state * state);
 void processFrame (dsd_opts * opts, dsd_state * state);
 void printFrameSync (dsd_opts * opts, dsd_state * state, char *frametype, int offset, char *modulation);
 int getFrameSync (dsd_opts * opts, dsd_state * state);
-int comp (const void *a, const void *b);
-void usage ();
-void sigfun (int sig);
-int main (int argc, char **argv);
 void playMbeFiles (dsd_opts * opts, dsd_state * state, int argc, char **argv);
 void processMbeFrame (dsd_opts * opts, dsd_state * state, char imbe_fr[8][23], char ambe_fr[4][24], char imbe7100_fr[7][24]);
 void openSerial (dsd_opts * opts, dsd_state * state);
@@ -155,5 +151,7 @@ void processX2TDMAvoice (dsd_opts * opts, dsd_state * state);
 void processDSTAR_HD (dsd_opts * opts, dsd_state * state);
 short dmr_filter(short sample);
 short nxdn_filter(short sample);
+
+int main (int argc, char **argv);
 
 #endif // DSD_H

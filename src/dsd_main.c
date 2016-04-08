@@ -28,16 +28,10 @@
 #include "git_ver.h"
 #include "p25p1_heuristics.h"
 #include "pa_devs.h"
+#include "dsd_comp.h"
 
-int comp(const void *a, const void *b)
-{
-    if (*((const int *) a) == *((const int *) b))
-        return 0;
-    else if (*((const int *) a) < *((const int *) b))
-        return -1;
-    else
-        return 1;
-}
+static void usage ();
+static void sigfun (int sig);
 
 void usage()
 {

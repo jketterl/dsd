@@ -18,6 +18,7 @@
 #include "dsd.h"
 #include "dsd_nocarrier.h"
 #include "dsd_cleanupexit.h"
+#include "dsd_comp.h"
 
 void
 printFrameSync (dsd_opts * opts, dsd_state * state, char *frametype, int offset, char *modulation)

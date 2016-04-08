@@ -18,8 +18,8 @@
 #include <assert.h>
 
 #include "dsd.h"
-
 #include "p25p1_heuristics.h"
+#include "dsd_comp.h"
 
 static void
 print_datascope(dsd_opts* opts, dsd_state* state, int* sbuf2)
