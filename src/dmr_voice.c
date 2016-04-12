@@ -226,7 +226,7 @@ processDMRvoice (dsd_opts * opts, dsd_state * state)
 
       if ((j == 0) && (opts->errorbars == 1))
         {
-          fprintf(stderr,  "%s %s  VOICE e:", state->slot0light, state->slot1light);
+          fprintf(stderr,  "%s %s  VOICE e:\n", state->slot0light, state->slot1light);
         }
 
 #ifdef DMR_DUMP
@@ -263,8 +263,19 @@ processDMRvoice (dsd_opts * opts, dsd_state * state)
             }
           else
             {
+              if (opts->errorbars == 1) {
+                  fprintf(stderr, "MBE: ");
+              }
+
               processMbeFrame (opts, state, NULL, ambe_fr, NULL);
+              if (opts->errorbars == 1) {
+                  fprintf(stderr, ".");
+              }
+
               processMbeFrame (opts, state, NULL, ambe_fr2, NULL);
+              if (opts->errorbars == 1) {
+                  fprintf(stderr, ".");
+              }
             }
         }
 
@@ -286,6 +297,9 @@ processDMRvoice (dsd_opts * opts, dsd_state * state)
       if (mutecurrentslot == 0)
         {
           processMbeFrame (opts, state, NULL, ambe_fr3, NULL);
+          if (opts->errorbars == 1) {
+              fprintf(stderr, "\n");
+          }
         }
 
       // CACH
@@ -376,7 +390,7 @@ processDMRvoice (dsd_opts * opts, dsd_state * state)
 
   if (opts->errorbars == 1)
     {
-      fprintf(stderr,  "\n");
+      fprintf(stderr,  "-- VOICE end --\n");
     }
 
 }

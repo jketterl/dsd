@@ -220,7 +220,7 @@ processDMRdata (dsd_opts * opts, dsd_state * state)
 
   if (opts->errorbars == 1)
     {
-      fprintf(stderr,  "%s %s ", state->slot0light, state->slot1light);
+      fprintf(stderr,  "%s %s\n", state->slot0light, state->slot1light);
     }
 
   // current slot second half, cach, next slot 1st half
