@@ -15,11 +15,12 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*
- * NXDN AMBE interleave schedule
- */
+#ifndef INCLUDE_DSD_CLEANUPEXIT_H_
+#define INCLUDE_DSD_CLEANUPEXIT_H_
 
-extern const int n96W[36];
-extern const int n96X[36];
-extern const int n96Y[36];
-extern const int n96Z[36];
+#include "dsd_opts.h"
+#include "dsd_state.h"
+
+void cleanupAndExit(dsd_opts * opts, dsd_state * state);
+
+#endif /* INCLUDE_DSD_CLEANUPEXIT_H_ */

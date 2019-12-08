@@ -15,11 +15,9 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*
- * NXDN AMBE interleave schedule
- */
+#ifndef INCLUDE_DSD_COMP_H_
+#define INCLUDE_DSD_COMP_H_
 
-extern const int n96W[36];
-extern const int n96X[36];
-extern const int n96Y[36];
-extern const int n96Z[36];
+int comp(const void *a, const void *b);
+
+#endif /* INCLUDE_DSD_COMP_H_ */

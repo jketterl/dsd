@@ -15,11 +15,14 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*
- * NXDN AMBE interleave schedule
- */
+#include "dsd_comp.h"
 
-extern const int n96W[36];
-extern const int n96X[36];
-extern const int n96Y[36];
-extern const int n96Z[36];
+int comp(const void *a, const void *b)
+{
+    if (*((const int *) a) == *((const int *) b))
+        return 0;
+    else if (*((const int *) a) < *((const int *) b))
+        return -1;
+    else
+        return 1;
+}

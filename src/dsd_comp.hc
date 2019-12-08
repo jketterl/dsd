@@ -15,11 +15,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-/*
- * NXDN AMBE interleave schedule
- */
 
-extern const int n96W[36];
-extern const int n96X[36];
-extern const int n96Y[36];
-extern const int n96Z[36];
+
+

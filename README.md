@@ -5,6 +5,8 @@ DSD is able to decode [several digital voice formats](https://github.com/szechyj
 tap audio and synthesize  the decoded speech.  Speech
 synthesis requires mbelib, which is a separate package.
 
+## This fork has been largely superceded by DSDcc also in this repository
+See: [DSDcc](https://github.com/f4exb/dsdcc)
 
 ## Information
 

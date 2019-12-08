@@ -11,11 +11,11 @@ processNXDN96 (dsd_opts * opts, dsd_state * state)
 
   if (opts->errorbars == 1)
     {
-      printf ("VOICE e:");
+      fprintf(stderr, "VOICE e:");
     }
 
 #ifdef NXDN_DUMP
-  printf ("\n");
+  fprintf(stderr, "\n");
 #endif
 
   for (k = 0; k < 4; k++)
@@ -24,26 +24,26 @@ processNXDN96 (dsd_opts * opts, dsd_state * state)
         {
           dibit = getDibit (opts, state);
 #ifdef NXDN_DUMP
-          printf ("%c", dibit + 48);
+          fprintf(stderr, "%c", dibit + 48);
 #endif
         }
 #ifdef NXDN_DUMP
-      printf (" ");
+      fprintf(stderr, " ");
 #endif
 
       if (k < 3)
         {
           for (j = 0; j < 4; j++)
             {
-              w = nW;
-              x = nX;
-              y = nY;
-              z = nZ;
+              w = n96W;
+              x = n96X;
+              y = n96Y;
+              z = n96Z;
               for (i = 0; i < 36; i++)
                 {
                   dibit = getDibit (opts, state);
 #ifdef NXDN_DUMP
-                  printf ("%c", dibit + 48);
+                  fprintf(stderr, "%c", dibit + 48);
 #endif
                   ambe_fr[*w][*x] = (1 & (dibit >> 1)); // bit 1
                   ambe_fr[*y][*z] = (1 & dibit);        // bit 0
@@ -54,7 +54,7 @@ processNXDN96 (dsd_opts * opts, dsd_state * state)
                 }
               processMbeFrame (opts, state, NULL, ambe_fr, NULL);
 #ifdef NXDN_DUMP
-              printf (" ");
+              fprintf(stderr, " ");
 #endif
             }
         }
@@ -62,15 +62,15 @@ processNXDN96 (dsd_opts * opts, dsd_state * state)
         {
           for (j = 0; j < 3; j++)       // we skip the last voice frame until frame sync can work with < 24 symbols
             {
-              w = nW;
-              x = nX;
-              y = nY;
-              z = nZ;
+              w = n96W;
+              x = n96X;
+              y = n96Y;
+              z = n96Z;
               for (i = 0; i < 36; i++)
                 {
                   dibit = getDibit (opts, state);
 #ifdef NXDN_DUMP
-                  printf ("%c", dibit + 48);
+                  fprintf(stderr, "%c", dibit + 48);
 #endif
                   ambe_fr[*w][*x] = (1 & (dibit >> 1)); // bit 1
                   ambe_fr[*y][*z] = (1 & dibit);        // bit 0
@@ -81,7 +81,7 @@ processNXDN96 (dsd_opts * opts, dsd_state * state)
                 }
               processMbeFrame (opts, state, NULL, ambe_fr, NULL);
 #ifdef NXDN_DUMP
-              printf (" ");
+              fprintf(stderr, " ");
 #endif
             }
         }
@@ -92,11 +92,11 @@ processNXDN96 (dsd_opts * opts, dsd_state * state)
             {
               dibit = getDibit (opts, state);
 #ifdef NXDN_DUMP
-              printf ("%c", dibit + 48);
+              fprintf(stderr, "%c", dibit + 48);
 #endif
             }
 #ifdef NXDN_DUMP
-          printf (" ");
+          fprintf(stderr, " ");
 #endif
 
         }
@@ -106,19 +106,19 @@ processNXDN96 (dsd_opts * opts, dsd_state * state)
             {
               dibit = getDibit (opts, state);
 #ifdef NXDN_DUMP
-              printf ("%c", dibit + 48);
+              fprintf(stderr, "%c", dibit + 48);
 #endif
             }
         }
     }
 
 #ifdef NXDN_DUMP
-  printf ("\n");
+  fprintf(stderr, "\n");
 #endif
 
   if (opts->errorbars == 1)
     {
-      printf ("\n");
+      fprintf(stderr, "\n");
     }
 
 }
