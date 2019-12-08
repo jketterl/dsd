@@ -53,6 +53,7 @@ if (HELP2MAN_FOUND)
     add_custom_command(TARGET dsd POST_BUILD
         COMMAND help2man
         ARGS -n "Digital Speech Decoder"
+            --no-discard-stderr
             --version-string=${GIT_TAG}
             -o ${CMAKE_CURRENT_BINARY_DIR}/dsd.1
             --no-info
