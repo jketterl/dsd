@@ -1,3 +1,9 @@
+dsd (1.7.0-1) buster; urgency=medium
+
+  * New build for Debian Buster
+
+ -- Jakob Ketterl <jakob.ketterl@gmx.de>  Fri, 04 Dec 2020 20:36:00 +0000
+
 dsd (1.7.0~1) bionic; urgency=medium
 
   ** SNAPSHOT build **
