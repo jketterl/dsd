@@ -1,6 +1,6 @@
 dsd (1.7.0-1) groovy; urgency=medium
 
-  * New build for Ubuntu Groovy Gorilla
+  * Fix gcc 10 compiler error
 
  -- Jakob Ketterl <jakob.ketterl@gmx.de>  Fri, 04 Dec 2020 20:37:00 +0000
 
