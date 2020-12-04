@@ -127,7 +127,7 @@ int main(int argc, char **argv)
     char versionstr[25];
     mbe_printVersion(versionstr);
 
-    fprintf(stderr, "Digital Speech Decoder 1.7.0-dev (build:%s)\n", GIT_TAG);
+    fprintf(stderr, "Digital Speech Decoder 1.7.1-dev (build:%s)\n", GIT_TAG);
     fprintf(stderr, "mbelib version %s\n", versionstr);
 
     initOpts(&opts);
