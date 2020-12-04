@@ -1,6 +1,6 @@
-dsd (1.7.0-1) buster; urgency=medium
+dsd (1.7.1-1) buster; urgency=medium
 
-  * New build for Debian Buster
+  * Fix gcc 10 compiler error
 
  -- Jakob Ketterl <jakob.ketterl@gmx.de>  Fri, 04 Dec 2020 20:36:00 +0000
 
