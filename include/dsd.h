@@ -61,7 +61,7 @@
 /*
  * global variables
  */
-int exitflag;
+extern int exitflag;
 
 #include "dsd_opts.h"
 #include "dsd_state.h"

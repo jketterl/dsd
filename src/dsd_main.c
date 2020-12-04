@@ -31,6 +31,11 @@
 static void usage ();
 static void sigfun (int sig);
 
+/*
+ * global variables
+ */
+int exitflag;
+
 void usage()
 {
     fprintf(stderr, "\n");
