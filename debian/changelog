@@ -1,3 +1,9 @@
+dsd (1.7.1-2) hirsute; urgency=low
+
+  * New release build for Ubuntu Hirsute Hippo
+
+ -- Jakob Ketterl <jakob.ketterl@gmx.de>  Fri, 23 Apr 2021 14:38:00 +0000
+
 dsd (1.7.1-1) groovy; urgency=medium
 
   * Fix gcc 10 compiler error
